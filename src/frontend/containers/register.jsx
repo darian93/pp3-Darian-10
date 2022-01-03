@@ -14,7 +14,7 @@ class Register extends React.Component {
         confirmPassword: "",
         fullname: "",
         referral_code: "",
-        auth_status: "admin",
+        auth_status: "view",
     }
     
     redirectHandler = () => {

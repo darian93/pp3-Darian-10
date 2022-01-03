@@ -40,7 +40,7 @@ class Register extends React.Component {
     render () {
         console.log(this.state)
 
-        if(this.props.userGlobal.auth_status === "super_admin") {
+        if(this.props.userGlobal.auth_status === "super_admin" || this.props.userGlobal.auth_status==="cashier") {
             //alert("Authorization Granted")
         } else {
             this.redirectHandler();

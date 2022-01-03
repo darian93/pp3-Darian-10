@@ -9,7 +9,7 @@ const landingPage = () => {
                 <div className="header">
                     WELCOME, TO TELAGA'S<br/>ORDER MANAGEMENT WEBSITE
                 </div>
-               <button className="pp3__button"><Link to='/av' style={{ textDecoration: 'none', color:"#fff"}}>Task Overview</Link></button> 
+               <button className="pp3__button"><Link to='/av' style={{ textDecoration: 'none', color:"#fff"}}>Progress Pekerjaan</Link></button> 
             </div>
         </div>
     )

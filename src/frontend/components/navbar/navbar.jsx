@@ -21,7 +21,11 @@ class MyNavbar extends React.Component {
                         this.props.userGlobal.auth_status === "super_admin" ? 
                         <p><Link to="/sa" style={{ textDecoration: 'none', color: 'white' }}>TASK MANAGEMENT</Link></p> :
                         this.props.userGlobal.auth_status === "admin" ?
-                        <p><Link to="/" style={{ textDecoration: 'none', color: 'white' }}>VIEW TASK</Link></p> :
+                        <p><Link to="/av" style={{ textDecoration: 'none', color: 'white' }}>Progress Pekerjaan</Link></p> :
+                        this.props.userGlobal.auth_status === "cashier" ?
+                        <p><Link to="/sa" style={{ textDecoration: 'none', color: 'white' }}>TASK MANAGEMENT</Link></p> :
+                        this.props.userGlobal.auth_status === "view" ?
+                        <p><Link to="/av" style={{ textDecoration: 'none', color: 'white' }}>Progress Pekerjaan</Link></p> :
                         <p><Link to="/register" style={{ textDecoration: 'none', color: 'white' }}>SIGN UP</Link></p>
                     }
                     

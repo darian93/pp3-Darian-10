@@ -11,7 +11,7 @@ export const confirmReg = (data) => {
         fullname: data.fullname,
         gender: data.gender,
         age: data.age,
-        auth_status: "user",
+        auth_status: "view",
       })
         .then((res) => {
           alert("Registration successful");

@@ -13,7 +13,7 @@ class ViewTask extends React.Component {
     }
 
     componentDidMount() {
-        if(this.props.userGlobal.auth_status === "super_admin" || this.props.userGlobal.auth_status==="admin"){
+        if(this.props.userGlobal.auth_status === "super_admin" || this.props.userGlobal.auth_status==="admin" || this.props.userGlobal.auth_status==="view" || this.props.userGlobal.auth_status==="cashier" ){
             this.props.getTask()
             setInterval(this.props.getTask, 5000)
             //console.log(this.props.userGlobal)
@@ -157,7 +157,7 @@ class ViewTask extends React.Component {
 
         return <div className="pp3__adm-base-container">
                     <div className="pp3__adm-content">
-                        <div className="pp3__adm-header">Task Overview</div>
+                        <div className="pp3__adm-header">Progress Pekerjaan</div>
                         <table className="table" style={{width:'100%', height:'100%'}}>
                             <thead className="table" style={{backgroundColor: "rgb(140, 55, 151, 0.2)"}} >
                                 <tr>
@@ -184,12 +184,16 @@ class ViewTask extends React.Component {
                     <div className="pp3__adm-btn-container">
                     {
                         this.props.userGlobal.auth_status === "super_admin" ? 
-                        <button className="pp3__adm-btn"><Link to="/tm" style={{ textDecoration: 'none', color: 'white' }}>Task Manager</Link></button> : 
+                        <button className="pp3__adm-btn"><Link to="/tm" style={{ textDecoration: 'none', color: 'white' }}>Update Proses</Link></button> : 
+                        this.props.userGlobal.auth_status === "admin" ? 
+                        <button className="pp3__adm-btn"><Link to="/tm" style={{ textDecoration: 'none', color: 'white' }}>Update Proses</Link></button> : 
                         ""
                     }
                                         {
                         this.props.userGlobal.auth_status === "super_admin" ? 
-                        <button className="pp3__adm-btn"><Link to="/ts" style={{ textDecoration: 'none', color: 'white' }}>Edit Task Status</Link></button> : 
+                        <button className="pp3__adm-btn"><Link to="/ts" style={{ textDecoration: 'none', color: 'white' }}>Edit Status</Link></button> : 
+                        this.props.userGlobal.auth_status === "admin" ? 
+                        <button className="pp3__adm-btn"><Link to="/ts" style={{ textDecoration: 'none', color: 'white' }}>Edit Status</Link></button> : 
                         ""
                     }
                     </div>

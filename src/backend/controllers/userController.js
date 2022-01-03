@@ -13,7 +13,7 @@ module.exports = {
         ${db.escape(email)},
         ${db.escape(password)},
         ${db.escape(fullname)},
-        "admin");`
+        "view");`
 
         db.query(insertQuery, (err, results) => {
             if (err) {

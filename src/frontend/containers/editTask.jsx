@@ -197,6 +197,8 @@ class TaskManager extends React.Component {
                 {
                     this.props.userGlobal.auth_status === "super_admin" ? 
                 <button onClick={()=>{this.searchOrd(this.state.so)}} className="test-btn">SEARCH</button> :
+                this.props.userGlobal.auth_status === "admin" ? 
+                <button onClick={()=>{this.searchOrd(this.state.so)}} className="test-btn">SEARCH</button> :
                 ""
                 }
             </div>
