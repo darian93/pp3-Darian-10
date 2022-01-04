@@ -36,6 +36,7 @@
 }
 
 .pp3__form-group input {
+    color: #fff;
     height: 30px;
     border: 0;
     outline: 0;
@@ -44,6 +45,7 @@
 }
 
 .pp3__button-container {
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items:center;

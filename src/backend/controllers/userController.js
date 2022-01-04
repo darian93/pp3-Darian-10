@@ -6,7 +6,7 @@ module.exports = {
 
     registerUser: (req, res) => {
         let { username, email, password, fullname } = req.body
-        console.log(`Connecting to register API success, user email is ${req.body.email}`)
+        //console.log(`Connecting to register API success, user email is ${req.body.email}`)
         password = Crypto.createHmac("sha1", "hash123").update(password).digest("hex");
         let insertQuery = `Insert into user (username, email, password, fullname, auth_status) values (
         ${db.escape(username)},
@@ -26,8 +26,9 @@ module.exports = {
 
     loginUser: (req,res) => {
         let { username, password } = req.body;
-        console.log(`logging in into ${req.body.username} account'`)
-        password = Crypto.createHmac("sha1", "hash123").update(password).digest("hex");
+        //console.log(`logging in into ${req.body.password} account`)
+        req.body.password = Crypto.createHmac("sha1", "hash123").update(password).digest("hex");
+        //console.log(`logging in into ${password} account`)
         let scriptQuery = `SELECT * FROM user WHERE username = ${db.escape(req.body.username)} AND password = ${db.escape(req.body.password)}`;
         db.query(scriptQuery, (err, result) => {
             console.log(result[0])

@@ -39,7 +39,7 @@ class TaskManager extends React.Component {
         const value = event.target.value;
         const name = event.target.name;
         this.setState({ [name]: value })
-        console.log(this.state)
+        //console.log(this.state)
     }
 
     searchOrd = (data) => {
@@ -49,12 +49,12 @@ class TaskManager extends React.Component {
           })
             .then((res) => {
               alert("Search finished");
-              console.log(res.data.data[0]);
+              //console.log(res.data.data[0]);
                 this.setState({ searchTask: res.data.data[0] })
             })
             .catch((err) => {
               alert("Search failed, order has probably finished");
-              console.log(err);
+              //console.log(err);
             });
           };
       
@@ -62,7 +62,7 @@ class TaskManager extends React.Component {
     renderSearchTask = () => {
         if (this.state.searchTask) {
             const newDeadline = this.state.searchTask.deadline.slice(0, 19).replace('T', ' ')
-            console.log(this.state)
+            //console.log(this.state)
                 return(
                     <tr>
                         <td style={{borderWidth:"1px", borderColor:"#fff", borderStyle:'solid', textAlign: "center"}}>{this.state.searchTask.so}</td>

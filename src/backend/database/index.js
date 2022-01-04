@@ -1,7 +1,7 @@
 const mysql = require("mysql");
 
 const db = mysql.createConnection({
-    host:'192.168.1.4',
+    host:'192.168.1.9',
     user:'root',
     password: 'password',
     database: 'db_telaga',

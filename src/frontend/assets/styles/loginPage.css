@@ -17,6 +17,7 @@
 }
 
 .pp3__form {
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,12 +30,14 @@
 }
 
 .pp3__form-group {
+    color: #fff;
     padding: 1rem 1rem 2rem 1rem;
     font-size: 20px;
 
 }
 
 .pp3__form-group input {
+    color: #fff;
     height: 30px;
     border: 0;
     outline: 0;

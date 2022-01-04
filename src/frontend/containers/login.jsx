@@ -19,7 +19,7 @@ class Login extends React.Component {
         const value = event.target.value;
         const name = event.target.name;
         this.setState({ [name]: value })
-        console.log(this.state)
+        //console.log(this.state)
     }
 
     render () {
@@ -28,7 +28,7 @@ class Login extends React.Component {
         if(redirect) {
             return <Redirect to="/"/>
         }
-        console.log(this.state)
+        //console.log(this.state)
 
         return (
             <div className="pp3__login-base-container">

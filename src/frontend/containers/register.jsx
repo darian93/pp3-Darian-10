@@ -25,7 +25,7 @@ class Register extends React.Component {
         const value = event.target.value;
         const name = event.target.name;
         this.setState({ [name]: value })
-        console.log(this.state)
+        //console.log(this.state)
     }
 
     passwordChecker = () => {
@@ -47,7 +47,7 @@ class Register extends React.Component {
         if(redirect) {
             return <Redirect to="/"/>
         }
-        console.log(this.state)
+        //console.log(this.state)
 
         return (
             <div className="pp3__register-base-container">

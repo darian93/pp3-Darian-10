@@ -157,7 +157,7 @@ class ViewTask extends React.Component {
 
         return <div className="pp3__adm-base-container">
                     <div className="pp3__adm-content">
-                        <div className="pp3__adm-header">Progress Pekerjaan</div>
+                        {/* <div className="pp3__adm-header">Progress Pekerjaan</div> */}
                         <table className="table" style={{width:'100%', height:'100%'}}>
                             <thead className="table" style={{backgroundColor: "rgb(140, 55, 151, 0.2)"}} >
                                 <tr>

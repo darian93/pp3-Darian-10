@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0rem 2rem;
     font-family: "Larsseit";
     letter-spacing: 0.15em;
     color: #fff;
@@ -35,11 +35,11 @@
     color:#fff;
     font-family: "Larsseit";
     font-weight:500;
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 25px;
     text-transform: capitalize;
     text-decoration: none;
-    margin: 0 1rem 0 3rem;
+    margin: 0 1rem 0 0.5rem;
     cursor: pointer;
 }
 

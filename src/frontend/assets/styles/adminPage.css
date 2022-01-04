@@ -21,11 +21,12 @@
     flex-direction: column;
     margin-left:2rem;
     font-family: "Larsseit";
-    font-size: 48px;
+    font-size: 12px;
     color: #fff!important;
 }
 
 .table {
+    font-size: 30px;
     border: 0;
     width: 100%;
     margin: 0px;

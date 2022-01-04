@@ -23,7 +23,7 @@ class Register extends React.Component {
     }
     
     redirectHandler = () => {
-        console.log(this.props.userGlobal.auth_status)
+        //console.log(this.props.userGlobal.auth_status)
         this.setState({redirect: true})
     }
 
@@ -38,7 +38,7 @@ class Register extends React.Component {
     }
 
     render () {
-        console.log(this.state)
+        //console.log(this.state)
 
         if(this.props.userGlobal.auth_status === "super_admin" || this.props.userGlobal.auth_status==="cashier") {
             //alert("Authorization Granted")
