@@ -4,10 +4,10 @@ const { db } = require('../database');
 module.exports = {
 
     addOrder: (req, res) => {
-        let { so, client, product, design, potong, press, sablon, bordir, jahit, finishing, deadline, order_status } = req.body
+        let { so, client, product, design, potong, press, sablon, bordir, jahit, finishing, deadline, order_status, quantity } = req.body
         console.log(req.body)
         console.log(`Connecting to super admin API success, registering order no ${req.body.so}`)
-        let insertQuery = `Insert into order_db (so, client, product, design, potong, press, sablon, bordir, jahit, finishing, deadline, order_status) values (
+        let insertQuery = `Insert into order_db (so, client, product, design, potong, press, sablon, bordir, jahit, finishing, deadline, order_status, quantity) values (
         ${db.escape(so)},
         ${db.escape(client)},
         ${db.escape(product)},
@@ -19,7 +19,8 @@ module.exports = {
         ${db.escape(jahit)},
         ${db.escape(finishing)},
         ${db.escape(deadline)},
-        ${db.escape(order_status)}
+        ${db.escape(order_status)},
+        ${db.escape(quantity)}
         );`
             console.log(insertQuery)
         db.query(insertQuery, (err, results) => {
@@ -51,7 +52,7 @@ module.exports = {
     },
 
     updateOrder: (req,res) => {
-        let { so, design, potong, press, sablon, bordir, jahit, finishing } = req.body;
+        let { so, design, potong, press, sablon, bordir, jahit, finishing, quantity } = req.body;
         console.log(`API updating for ${so}`)
         let scriptQuery = `UPDATE order_db SET 
         design = ${db.escape(design)},
@@ -60,9 +61,10 @@ module.exports = {
         sablon = ${db.escape(sablon)},
         bordir = ${db.escape(bordir)},
         jahit = ${db.escape(jahit)},
-        finishing = ${db.escape(finishing)} WHERE so = ${db.escape(so)};`;
+        finishing = ${db.escape(finishing)},
+        quantity = ${db.escape(quantity)} WHERE so = ${db.escape(so)};`;
         db.query(scriptQuery, (err, result) => {
-            //console.log(scriptQuery, result)
+            console.log(scriptQuery, result)
             if (err) {
                 return res.send({err, message: "update result error"})
             } else {

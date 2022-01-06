@@ -20,6 +20,7 @@ class TaskManager extends React.Component {
         bordir: "",
         jahit: "",
         finishing: "",
+        quantity: ""
     }
 
     componentDidMount() {
@@ -62,7 +63,8 @@ class TaskManager extends React.Component {
                     sablon: res.data.data[0].sablon,
                     bordir: res.data.data[0].bordir,
                     jahit: res.data.data[0].jahit,
-                    finishing: res.data.data[0].finishing
+                    finishing: res.data.data[0].finishing,
+                    quantity: res.data.data[0].quantity
                 })
             })
             .catch((err) => {
@@ -76,8 +78,6 @@ class TaskManager extends React.Component {
         if (this.state.searchTask) {
             console.log(this.state)
                 return( <div className="test-radios">
-                        <div className="test-text">{this.state.searchTask.so}</div>
-                        <div className="test-text">{this.state.searchTask.client}</div>
                             <div className="test-radio-form">
                                 <span className="radiocontainer">
                                 <label htmlFor="design">Done</label>
@@ -162,6 +162,9 @@ class TaskManager extends React.Component {
                                 <input className="selector" name="finishing" type="radio" value="unavailable" defaultChecked={this.state.finishing === "unavailable"} onChange={this.inputHandler} />   
                                 </span>
                             </div>
+                            <div className="test-radio-form">
+                                <input className="quantityInput" defaultValue={this.state.quantity} name="quantity" type="text" onChange={this.inputHandler}/>
+                            </div>
                             <button onClick={()=>{this.props.updateOrder(this.state);this.refreshPage()}}>Update</button>
                         </div>
 
@@ -169,6 +172,7 @@ class TaskManager extends React.Component {
         } else {
             return(
                 <div className="test-radios">
+                    <div className="test-text">-</div>
                     <div className="test-text">-</div>
                     <div className="test-text">-</div>
                     <div className="test-text">-</div>
@@ -191,7 +195,7 @@ class TaskManager extends React.Component {
         }
 
         return <div className="test-base-container">
-            <div className="test-header">Edit Task</div>
+            {/* <div className="test-header">Edit Task</div> */}
             <div className="test-btn-container">
                 <input className="text-input" name="so" type="text" placeholder="Type your SO" onChange={this.inputHandler} />   
                 {
@@ -201,18 +205,21 @@ class TaskManager extends React.Component {
                 <button onClick={()=>{this.searchOrd(this.state.so)}} className="test-btn">SEARCH</button> :
                 ""
                 }
+            <div className="header-text">{this.state.searchTask.so}</div>
+            <div className="header-text">{this.state.searchTask.client}</div>
             </div>
+
                 <div className="test-content">
                     <div className="test-legends">
-                        <div className="test-text">SO No.</div>
-                        <div className="test-text">Name</div>
-                        <div className="test-text">Design</div>
-                        <div className="test-text">Potong</div>
-                        <div className="test-text">Press</div>
-                        <div className="test-text">Sablon</div>
-                        <div className="test-text">Bordir</div>
-                        <div className="test-text">Jahit</div>
-                        <div className="test-text">Finishing</div>
+ 
+                        <div className="test-text">DESIGN</div>
+                        <div className="test-text">POTONG</div>
+                        <div className="test-text">PRESS</div>
+                        <div className="test-text">SABLON</div>
+                        <div className="test-text">BORDIR</div>
+                        <div className="test-text">JAHIT</div>
+                        <div className="test-text">FINISHING</div>
+                        <div className="test-text">QUANTITY</div>
                     </div>
                             {this.renderSearchTask()}
                 </div>

@@ -17,6 +17,7 @@ export const confirmAdd = (data) => {
         finishing: data.finishing,
         deadline: data.deadline.slice(0, 19).replace('T', ' '),
         order_status: data.order_status,
+        quantity: data.quantity,
       })
         .then((res) => {
           alert("Order successfully added");
@@ -29,7 +30,7 @@ export const confirmAdd = (data) => {
   };
 
   export const updateOrder = (data) => {
-    console.log(data);
+    console.log(`pass through update order axios with ${data}`);
     return (dispatch) => {
       Axios.post(API_URL + "/tm/update", {
         so: data.so,
@@ -40,6 +41,7 @@ export const confirmAdd = (data) => {
         bordir: data.bordir,
         jahit: data.jahit,
         finishing: data.finishing,
+        quantity: data.quantity,
       })
         .then((res) => {
           alert("Order successfully updated");

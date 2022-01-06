@@ -19,7 +19,8 @@ class Register extends React.Component {
         jahit:"unavailable",
         finishing: "unavailable",
         deadline: "",
-        order_status: "started"
+        order_status: "started",
+        quantity: "",
     }
     
     redirectHandler = () => {
@@ -69,6 +70,9 @@ class Register extends React.Component {
 
                         <div className="pp3__taskCreation-form-group">
                             <input type="date" name="deadline" placeholder="Due Date of Project" onChange={this.inputHandler}/>             
+                        </div>
+                        <div className="pp3__taskCreation-form-group">
+                            <input type="text" name="quantity" placeholder="Quantity" onChange={this.inputHandler}/>             
                         </div>
                         <div className="pp3__button-container">
                         <button onClick={()=>{this.props.confirmAdd(this.state)}}>Add Order</button>
