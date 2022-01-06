@@ -2,7 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom'
 import { connect } from "react-redux";
-import '../assets/styles/editTask.css'
+import '../assets/styles/editStatus.css'
 import {getTask} from "../redux/action/user"; 
 import {searchOrd, updateOrderStatus} from "../redux/action/superAdmin"; 
 import { API_URL } from "../constants/API";
@@ -69,19 +69,19 @@ class TaskManager extends React.Component {
                 return( <div className="test-radios">
                             <div className="test-text">{this.state.searchTask.so}</div>
                             <div className="test-text">{this.state.searchTask.client}</div>
-                            <div className="pp3__form-group">
+                            <div className="dategroup">
                                 <input type="date" name="deadline" defaultValue={this.state.deadline} onChange={this.inputHandler}/>             
                             </div>
                             
                             <div className="pp3__form-radio">
-                                <span className="radiocontainer">
+                                <span className="statusradiocontainer">
                                 <label htmlFor="order_status">Done</label>
                                 <input className="selector" name="order_status" type="radio" value="done" defaultChecked={this.state.order_status === "done"} onChange={this.inputHandler} />
                                 <label htmlFor="order_status">Started</label>
                                 <input className="selector" name="order_status" type="radio" value="started"  defaultChecked={this.state.order_status === "started"} onChange={this.inputHandler} />   
                                 </span>
                             </div>
-                            <button onClick={()=>{this.props.updateOrderStatus(this.state);this.refreshPage()}}>Update</button>
+                            <button className="button-update" onClick={()=>{this.props.updateOrderStatus(this.state);this.refreshPage()}}>Update</button>
                         </div>
 
                     )
